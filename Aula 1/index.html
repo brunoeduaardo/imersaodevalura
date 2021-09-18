@@ -20,16 +20,26 @@
             
         </div>
         <div class="campo">
-            <label><strong>Qual unidade você quer converter?</strong></label>
+            <label id='qualTemperatura'><strong>Qual unidade você quer converter?</strong></label>
             <label>
-                <input type="radio" name="temperatura" value="fahrenheit" checked>ºF
+                <input id='fahrenheit' type="radio" name="temperatura" value="fahrenheit">ºF
             </label>
             <label>
                 <input type="radio" name="temperatura" value="celsius">ºC
             </label>
             
         </div>
-        <input type="number" id="temp" />
+        <div class='campoTemperatura'>
+            <label>
+                <input type="number" id="temp" />
+            </label>
+            <label>
+                <button onclick="converterTemperatura()">
+                    Converter temperatura
+                </button>
+            </label>
+            <h2 id='temperaturaConvertida' class='temperaturaConvertida'></h2>
+        </div>
     </div>
     <a href="https://alura.com.br/" target="_blank">
     <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
