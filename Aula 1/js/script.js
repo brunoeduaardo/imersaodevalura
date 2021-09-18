@@ -11,9 +11,9 @@ var notaArredondada = notaFinal.toFixed(1)
 const nota = document.getElementById('nota');
 
 if(notaArredondada >= 6){
-    alert('Aluno aprovado, com nota: ' + notaArredondada);
+    nota.innerHTML = 'Aluno aprovado, com nota: ' + notaArredondada;
 } else {
-    alert('Aluno reprovado, com nota: ' + notaArredondada);
+    nota.innerHTML = 'Aluno reprovado, com nota: ' + notaArredondada;
 }
 
 console.log('Bem vindo ' + nome);
