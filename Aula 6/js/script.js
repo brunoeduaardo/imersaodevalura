@@ -37,5 +37,8 @@ function exibeJogadores(jogadores){
         elemento += "<td><button onClick='adicionarDerrota()'>Derrota</button></td>"
         elemento += '</tr>'
     }
-    
+    let tabelaJogadores = document.getElementById('tabelaJogadores');
+    tabelaJogadores.innerHTML = elemento;
 }
+
+exibeJogadores(jogadores);
