@@ -70,6 +70,16 @@ function obtemAtributoSelecionado(){
 
 function jogar(){
     let atributoSelecionado = obtemAtributoSelecionado();
-    console.log(atributoSelecionado);
+    let elementoResultado = document.getElementById('resultado');
+    let valorCartaJogador = cartaJogador.atributos[atributoSelecionado];
+    let valorCartaMaquina = cartaMaquina.atributos[atributoSelecionado];
 
+    if(valorCartaJogador > valorCartaMaquina){
+        elementoResultado.innerHTML = 'Você ganhou';
+    } else if (valorCartaJogador < valorCartaMaquina){
+        elementoResultado.innerHTML = 'Você perdeu, a carta da máquina é maior';
+    } else [
+        elementoResultado.innerHTML = 'Empatou'
+    ]
+    
 }
