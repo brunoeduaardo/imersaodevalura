@@ -70,7 +70,7 @@ function exibirCartaJogador(){
 
     let opcoesTexto = '';
     for (let atributo in cartaJogador.atributos){
-        opcoesTexto += '<input type="radio" name="atributo" value="' + atributo + '">' + atributo + ' ' + cartaJogador.atributos[atributo] + '<br>';
+        opcoesTexto += '<input type="radio" name="atributo" value="' + atributo + '">' + atributo + ': ' + cartaJogador.atributos[atributo] + '<br>';
     }
     let nome = `<p class="carta-subtitle">${cartaJogador.nome}</p>`;
     divCartaJogador.innerHTML = moldura + nome + tagHTML + opcoesTexto + '</div>';
@@ -90,16 +90,36 @@ function obtemAtributoSelecionado(){
 
 function jogar(){
     let atributoSelecionado = obtemAtributoSelecionado();
-    let elementoResultado = document.getElementById('resultado');
+    let divResultado = document.getElementById('resultado');
     let valorCartaJogador = cartaJogador.atributos[atributoSelecionado];
     let valorCartaMaquina = cartaMaquina.atributos[atributoSelecionado];
 
     if(valorCartaJogador > valorCartaMaquina){
-        elementoResultado.innerHTML = 'Você ganhou';
+        elementoResultado = '<p class="resultado-final">Você venceu!</p>';
     } else if (valorCartaJogador < valorCartaMaquina){
-        elementoResultado.innerHTML = 'Você perdeu, a carta da máquina é maior';
-    } else [
-        elementoResultado.innerHTML = 'Empatou'
-    ]
-    
+        elementoResultado = '<p class="resultado-final">Você perdeu</p>'
+    } else {
+        elementoResultado = '<p class="resultado-final">Empate</p>'
+    }
+    divResultado.innerHTML = elementoResultado;
+
+    document.getElementById('btnJogar').disabled = true;
+    exibirCartaMaquina();
+
+    document.getElementById('btnSortear').disabled = false;
+}
+
+function exibirCartaMaquina(){
+    let divCartaMaquina = document.getElementById('carta-maquina');
+    divCartaMaquina.style.backgroundImage = `url(${cartaMaquina.imagem})`; // o cifrão define que será um código JS detnro de um CSS
+
+    let moldura = '<img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent.png" style=" width: inherit; height: inherit; position: absolute;">';
+    let tagHTML = '<div id="opcoes" class="carta-status">'
+
+    let opcoesTexto = '';
+    for (let atributo in cartaMaquina.atributos){
+        opcoesTexto += '<p name="atributo" value="' + atributo + '">' + atributo + ': ' + cartaMaquina.atributos[atributo] + '</p>';
+    }
+    let nome = `<p class="carta-subtitle">${cartaMaquina.nome}</p>`;
+    divCartaMaquina.innerHTML = moldura + nome + tagHTML + opcoesTexto + '</div>';
 }
