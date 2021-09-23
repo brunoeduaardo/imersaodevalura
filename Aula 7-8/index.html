@@ -12,7 +12,7 @@
         <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-super-trunfo.png" class="page-logo"
             alt="">
         <h1 class="page-title">Super Trunfo</h1>
-        <button onclick="sortearCarta()" id="btnSortear">Sortear carta</button>
+        <button class="button-sortear" onclick="sortearCarta()" id="btnSortear">Sortear carta</button>
         <form id="form">
             <h2>Escolha o seu atributo</h2>
             <div class="wrapper">
@@ -29,7 +29,9 @@
                             style=" width: inherit; height: inherit; position: absolute;"></div>
                 </div>
             </div>
-            <button class="button-jogar" type="button" id="btnJogar" onclick="jogar()" disabled="false">Jogar</button>
+            <div class="container-jogar">
+                <button class="button-jogar" type="button" id="btnJogar" onclick="jogar()" disabled="false">Jogar</button>
+            </div>
             <div id="resultado"></div>
         </form>
     </div>

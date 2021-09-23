@@ -28,6 +28,56 @@ let cartas = [ // array com cartas criadas
             defesa: 3,
             magia: 5
         }
+    },
+
+    carta4 = {
+        nome: 'Hermione Granger',
+        imagem: 'https://i.pinimg.com/736x/b8/7c/07/b87c074cb059f9bb278286f7a7501d4d.jpg',
+        atributos: {
+            ataque: 6,
+            defesa: 9,
+            magia: 10
+        }
+    },
+
+    carta5 = {
+        nome: 'Ronald Weasley',
+        imagem: 'https://febreteen.com.br/wp-content/uploads/2020/12/Rupert-Grint.jpg',
+        atributos: {
+            ataque: 7,
+            defesa: 8,
+            magia: 6
+        }
+    },
+
+    carta6 = {
+        nome: 'Alvo Dumbledore',
+        imagem: 'https://imagilendo.files.wordpress.com/2014/06/albus-dumbledore-hogwarts-professors.jpg',
+        atributos: {
+            ataque: 9,
+            defesa: 10,
+            magia: 10
+        }
+    },
+
+    carta7 = {
+        nome: 'Lord Voldemort',
+        imagem: 'https://observatoriodocinema.uol.com.br/wp-content/uploads/2019/08/voldemort-harry-potter.jpg',
+        atributos: {
+            ataque: 9,
+            defesa: 10,
+            magia: 10
+        }
+    },
+
+    carta8 = {
+        nome: 'Gina Weasley',
+        imagem: 'https://lh3.googleusercontent.com/-9jWOjUnEpIM/YRMhQ39omGI/AAAAAAAA9qo/DZNfSqVUXjw5pe0vsdwZ1Z1weFijqof2gCLcBGAsYHQ/w640/1628643648806116-0.png',
+        atributos: {
+            ataque: 7,
+            defesa: 8,
+            magia: 8
+        }
     }
 
 ];
@@ -36,12 +86,12 @@ let cartaMaquina; // definindo duas variáveis vazias para podermos sortear as c
 let cartaJogador; // de cada jogador
 
 function sortearCarta(){
-    let indiceCartaMaquina = parseInt(Math.random() * 3);
+    let indiceCartaMaquina = parseInt(Math.random() * 8);
     cartaMaquina = cartas[indiceCartaMaquina];
 
-    let indiceCartaJogador = parseInt(Math.random() * 3);
+    let indiceCartaJogador = parseInt(Math.random() * 8);
     while (indiceCartaJogador == indiceCartaMaquina){
-        indiceCartaJogador = parseInt(Math.random() * 3);
+        indiceCartaJogador = parseInt(Math.random() * 8);
     }
     cartaJogador = cartas[indiceCartaJogador];
 
@@ -106,7 +156,6 @@ function jogar(){
     document.getElementById('btnJogar').disabled = true;
     exibirCartaMaquina();
 
-    document.getElementById('btnSortear').disabled = false;
 }
 
 function exibirCartaMaquina(){
