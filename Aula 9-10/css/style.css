@@ -42,6 +42,26 @@ body{
 .projetos{
   display: flex;
   flex-direction: column;
+  background: linear-gradient(230.65deg, #499CFE 27.49%, #9CC8FC 83.19%);
+  box-shadow: 2px 2px 4px rgba(16, 16, 16, 0.42);
+  border-radius: 20px;
+  margin-top: 32px;
 }
 
- 
+.titulo-projetos{
+  list-style: none;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.itens-projetos{
+  list-style-type: none;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 48px;
+}
+
+.itens-projetos a{
+  color: #1C1C1C;
+  text-decoration: none;
+}
